@@ -1,0 +1,29 @@
+.login-form-main {
+    display: flex;
+    background-color: #232323;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.login-form-main form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.field {
+    border-bottom: 1px solid #939393;
+    outline: none;
+    color: #fff;
+    background-color: #232323;
+}
+
+.field {
+    background-color: #232323;
+}
+
+.form-btn {
+    border-radius: 8px;
+    padding: 5px 0px;
+    background-color: #b7ff6f;
+}

@@ -1,0 +1,87 @@
+.Workspaces {
+    z-index: 0;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.workspace-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.space {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    min-width: 300px;
+    gap: 10px;
+    background-color: #232323;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+@media (width <=660px) {
+    .space {
+        min-width: none;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workspace-name {
+    font-size: 22px;
+    color: #b7ff6f;
+}
+
+.workspace-description {
+    color: #939393;
+}
+
+.view-btn {
+    align-self: flex-start;
+    padding: 5px;
+    color: #fff;
+    border: 1px solid #b7ff6f;
+    border-radius: 8px;
+}
+
+.created {
+    color: #939393;
+}
+
+.actions {
+    display: flex;
+}
+
+.workspace-action-area {
+    position: relative;
+    border-radius: 8px;
+    bottom: 0px;
+    background-color: #232323;
+    border: 1px solid #939393;
+    display: flex;
+    flex-direction: column;
+}
+
+#delete-btn {
+    font-size: 14px;
+    color: rgb(245, 74, 74);
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+#view-btn {
+    padding: 5px 10px;
+    color: #fff;
+}

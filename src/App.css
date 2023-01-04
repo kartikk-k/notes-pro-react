@@ -1,38 +1,58 @@
 .App {
-  text-align: center;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 10fr;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-full {
+    grid-template-columns: 10fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (width <=600px) {
+    .Sidebar {
+        /* display: grid; */
+        position: absolute;
+        height: 100%;
+    }
+    .App {
+        grid-template-columns: 10fr;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* sidebar buttons */
+
+.close-btn {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    height: 32px;
+    width: 32px;
+    border-radius: 0px 8px 8px 0px;
+    background-color: #232323;
+    z-index: 100;
 }
 
-.App-link {
-  color: #61dafb;
+.open-btn {
+    z-index: 100;
+    left: 195px;
+    transform: rotate(180deg);
+    border-radius: 8px 0px 0px 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Main-Container */
+
+.main-container {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 70px 5fr;
+}
+
+.Changable {
+    /* border: 1px solid white; */
+    /* height: 100%; */
+    display: grid;
+    padding: 0px 20px;
+    margin-bottom: 20px;
 }

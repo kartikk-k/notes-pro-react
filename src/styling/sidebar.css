@@ -1,0 +1,42 @@
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #232323;
+    padding: 20px 20px;
+    z-index: 100;
+}
+
+.header {
+    background-color: #232323;
+    z-index: 100;
+}
+
+.header p {
+    color: #B7FF6F;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.navigation {
+    /* position: sticky;
+    top: 10px; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.link-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.link-box img {
+    height: 24px;
+    width: 24px;
+}
+
+.link-box {
+    color: #fff;
+}

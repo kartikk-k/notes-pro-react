@@ -1,0 +1,39 @@
+.chapter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chapter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #232323;
+}
+
+@media (width <=660px) {
+  .chapter {
+    min-width: none;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+.chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chapter-name {
+  font-size: 22px;
+  color: #b7ff6f;
+}
+
+.chapter-description {
+  color: #939393;
+}
