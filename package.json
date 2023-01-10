@@ -1,7 +1,5 @@
 {
-    "homepage": "http//:kartikk-k.github.io/notes-pro-react",
     "name": "frontend",
-    "proxy": "https://web-production-0d22.up.railway.app/",
     "version": "0.1.0",
     "private": true,
     "dependencies": {

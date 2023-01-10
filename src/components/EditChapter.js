@@ -15,7 +15,6 @@ import History from '@tiptap/extension-history'
 import BulletList from '@tiptap/extension-bullet-list'
 import OrderedList from '@tiptap/extension-ordered-list'
 import ListItem from '@tiptap/extension-list-item'
-import TextAlign from '@tiptap/extension-text-align'
 
 import { useContext } from 'react'
 import AuthContext from '../context/AuthContext'
@@ -29,7 +28,7 @@ const EditChapter = () => {
     const [isExpanded, setIsExpanded] = useState(false)
 
     useEffect(() => {
-        axios.get(`/api/chapter/${chapter_id}/`, {
+        axios.get(`https://web-production-0d22.up.railway.app/api/chapter/${chapter_id}/`, {
             headers: {
                 'Authorization': 'Bearer ' + String(authTokens.access)
             }
@@ -41,7 +40,7 @@ const EditChapter = () => {
 
     const saveChapter = async () => {
         chapter.description = editor.getHTML()
-        let response = await fetch(`/api/chapter/${chapter_id}/`, {
+        let response = await fetch(`https://web-production-0d22.up.railway.app/api/chapter/${chapter_id}/`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -49,11 +48,11 @@ const EditChapter = () => {
             },
             body: JSON.stringify(chapter)
         })
-        let data = await response.json()
+        // let data = await response.json()
     }
 
     let editor = useEditor({
-        extensions: [Document, Paragraph, Text, Bold],
+        extensions: [Document, Paragraph, Text, Bold, Italic, Underline, History, BulletList, ListItem, OrderedList],
         content: `Refresh Window`,
     })
 
@@ -77,13 +76,40 @@ const EditChapter = () => {
                     onClick={() => editor.chain().focus().toggleBold().run()}
                     className={editor.isActive('bold') ? 'active-btn' : ''}
                 >
-                    ToggleBold
+                    Bold
                 </button>
                 <button
-                    onClick={() => editor.chain().focus().toggleBold().run()}
-                    className={editor.isActive('bold') ? 'active-btn' : ''}
+                    onClick={() => editor.chain().focus().toggleItalic().run()}
+                    className={editor.isActive('italic') ? 'active-btn' : ''}
                 >
-                    ToggleBold
+                    Italic
+                </button>
+                <button
+                    onClick={() => editor.chain().focus().toggleUnderline().run()}
+                    className={editor.isActive('underline') ? 'active-btn' : ''}
+                >Underline</button>
+                <button
+                    onClick={() => editor.chain().focus().toggleBulletList().run()}
+                    className={editor.isActive('bulletList') ? 'active-btn' : ''}
+                >
+                    BulletList
+                </button>
+                <button
+                    onClick={() => editor.chain().focus().toggleOrderedList().run()}
+                    className={editor.isActive('orderedList') ? 'active-btn' : ''}
+                >
+                    OrderedList
+                </button>
+
+                {/*  */}
+
+                {/*  */}
+
+                <button onClick={() => editor.chain().focus().undo().run()} disabled={!editor.can().undo()}>
+                    undo
+                </button>
+                <button onClick={() => editor.chain().focus().redo().run()} disabled={!editor.can().redo()}>
+                    redo
                 </button>
 
 

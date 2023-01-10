@@ -32,7 +32,7 @@ const AddNewChapter = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        let response = await fetch(`/api/chapter/`, {
+        let response = await fetch(`https://web-production-0d22.up.railway.app/api/chapter/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -29,7 +29,7 @@ const AddNewSpace = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('/api/workspace/', formData, {
+        axios.post('https://web-production-0d22.up.railway.app/api/workspace/', formData, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(authTokens.access)

@@ -19,7 +19,7 @@ const WorkspaceDetailed = () => {
     }, [])
 
     const getWorkspaceData = async () => {
-        let response = await fetch(`/api/workspace/${workspace_id}/`, {
+        let response = await fetch(`https://web-production-0d22.up.railway.app/api/workspace/${workspace_id}/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const WorkspaceDetailed = () => {
         let confirm = window.confirm("Are you sure you want to delete this workspace? This action cannot be undone.")
         if (confirm) {
             if (confirm) {
-                let response = await fetch(`/api/workspaces/${workspace_id}/`, {
+                let response = await fetch(`https://web-production-0d22.up.railway.app/api/workspaces/${workspace_id}/`, {
                     method: 'DELETE',
                     headers: {
                         'Authorization': 'Bearer ' + String(authTokens.access)

@@ -31,7 +31,7 @@ const AddNewSubject = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('/api/subject/', formData, {
+        axios.post('https://web-production-0d22.up.railway.app/api/subject/', formData, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(authTokens.access)

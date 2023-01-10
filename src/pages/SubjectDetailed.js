@@ -19,7 +19,7 @@ const SubjectDetailed = () => {
     }, [])
 
     const getSubjectData = async () => {
-        let response = await fetch(`/api/subject/${subject_id}/`, {
+        let response = await fetch(`https://web-production-0d22.up.railway.app/api/subject/${subject_id}/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const SubjectDetailed = () => {
     }, [])
 
     const getChaptersData = async () => {
-        let response = await fetch(`/api/subject/${subject_id}/chapters/`, {
+        let response = await fetch(`https://web-production-0d22.up.railway.app/api/subject/${subject_id}/chapters/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const SubjectDetailed = () => {
         let confirm = window.confirm("Are you sure you want to delete this subject? This action cannot be undone.")
         if (confirm) {
             if (confirm) {
-                let response = await fetch(`/api/subject/${subject_id}/`, {
+                let response = await fetch(`https://web-production-0d22.up.railway.app/api/subject/${subject_id}/`, {
                     method: 'DELETE',
                     headers: {
                         'Authorization': 'Bearer ' + String(authTokens.access)

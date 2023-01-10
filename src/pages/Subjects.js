@@ -16,9 +16,9 @@ const Subjects = () => {
     useEffect(() => {
         let FETCH_URL = ''
         if (workspace_id) {
-            FETCH_URL = `/api/workspace/${workspace_id}/subjects/`
+            FETCH_URL = `https://web-production-0d22.up.railway.app/api/workspace/${workspace_id}/subjects/`
         } else {
-            FETCH_URL = '/api/subject/'
+            FETCH_URL = 'https://web-production-0d22.up.railway.app/api/subject/'
         }
         getSubjects(FETCH_URL)
     }, [])
@@ -47,13 +47,13 @@ const Subjects = () => {
     const deleteSubject = async (subject_id) => {
         let confirm = window.confirm("Are you sure you want to delete this subject?")
         if (confirm) {
-            let response = await fetch(`/api/subject/${subject_id}/`, {
+            let response = await fetch(`https://web-production-0d22.up.railway.app/api/subject/${subject_id}/`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'Bearer ' + String(authTokens.access)
                 }
             })
-            getSubjects('/api/subject/')
+            getSubjects('https://web-production-0d22.up.railway.app/api/subject/')
         }
     }
 

@@ -20,9 +20,9 @@ const Chapters = ({ subject_id }) => {
     }, [])
     let FETCH_URL = ''
     if (subject_id) {
-        FETCH_URL = `/api/subject/${subject_id}/chapters/`
+        FETCH_URL = `https://web-production-0d22.up.railway.app/api/subject/${subject_id}/chapters/`
     } else {
-        FETCH_URL = '/api/chapter/'
+        FETCH_URL = 'https://web-production-0d22.up.railway.app/api/chapter/'
     }
 
 
@@ -41,13 +41,13 @@ const Chapters = ({ subject_id }) => {
     const deleteChapter = async (chapter_id) => {
         let confirm = window.confirm("Are you sure you want to delete this subject?")
         if (confirm) {
-            let response = await fetch(`/api/chapter/${chapter_id}/`, {
+            let response = await fetch(`https://web-production-0d22.up.railway.app/api/chapter/${chapter_id}/`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'Bearer ' + String(authTokens.access)
                 }
             })
-            getChapters(`/api/subject/${subject_id}/chapters/`)
+            getChapters(`https://web-production-0d22.up.railway.app/api/subject/${subject_id}/chapters/`)
         }
     }
 
@@ -56,13 +56,8 @@ const Chapters = ({ subject_id }) => {
         setIsAction({ ...isAction, [key]: (!isAction[key]) })
     }
 
-    // const openEditor = (chapter_id) => {
-    //     navigate(`/chapter/${chapter_id}`)
-    // }
-
     return (
         <div className='Chapter'>
-            {/* <div className="heading">Chapters</div> */}
             <div className="chapter-list">
                 {chapter.map((chapter, index) => (
                     <div className="chapter" key={index}>
@@ -71,14 +66,12 @@ const Chapters = ({ subject_id }) => {
                             <div className="actions">
                                 {isAction[index] && (
                                     <div className="workspace-action-area">
-                                        {/* <button id='view-btn'>View</button> */}
                                         <button id='delete-btn' onClick={() => deleteChapter(chapter.id)}>Delete</button>
                                     </div>
                                 )}
                                 <img src={ActionIcon} alt="actions" onClick={() => handleAction(index)} />
                             </div>
                         </div>
-                        {/* <p className="chapter-description">{chapter.description}</p> */}
                         <button className='view-btn'
                             onClick={() => navigate(`/edit/${chapter.id}`)}
                         >Open chapter</button>
